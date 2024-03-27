@@ -23,21 +23,25 @@ class CustomCell extends TextCellTemplate {
 function App() {
 
     return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <ReactGrid columns={[{ columnId: '1', width: 300 }]} rows={[
-            {
-                rowId: '1',
-                height: 70,
-                cells: cells
-            }
-        ]} customCellTemplates={{
-            text: new CustomCell()
-        }} />
-        <p>
-            Go to edit the cell to see the issue.
-        </p>
-    </LocalizationProvider>
-  )
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <ReactGrid columns={[{columnId: '1', width: 300}]} rows={[
+                {
+                    rowId: '1',
+                    height: 70,
+                    cells: cells
+                }
+            ]} customCellTemplates={{
+                text: new CustomCell()
+            }}/>
+            <p>
+                Go to edit the cell to see the issue.
+            </p>
+            <p>
+                The date picker is supposed to look like this:
+            </p>
+            <DatePicker/>
+        </LocalizationProvider>
+    )
 }
 
 export default App
